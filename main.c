@@ -6,7 +6,6 @@ int input(int *object,int *object_1,int *object_2,int *object_3){
 }
 int main() {
     int cmd,object_F,object_S,object_T;
-    int temp;
     int list[10] = {0,0,0,0,0,0,0,0,0,0};
     printf("this is a worriest fake system ");
     while(1){
@@ -20,7 +19,10 @@ int main() {
                    "5 -- copy number\n"
                    "6 -- how to use cmd\tinput:6 cmd(you don't know how to use this cmd) 0 0 0\n"
                    "7 -- times numbers\n"
-                   "100 -- show body\n");
+                   "8 -- divide number\n"
+                   "9 -- path add\n"
+                   "10 -- path time\n"
+                   "11 -- path divide\n");
         }
         else if (cmd == 1){
             break;
@@ -70,16 +72,32 @@ int main() {
                 printf("this cmd can times number\n"
                        "input: 7 number(need to times) number(like before) path(to save path)");
             }
+            else if (object_F == 8){
+                printf("this cmd can divide number\n"
+                       "input: 8 number number path");
+            }
+            else if (object_F == 9){
+                printf("this cmd can path's number add path's number to other path\n"
+                       "input: 9 path path path\n"
+                       "and 10,11 too\n");
+            }
         }
         else if (cmd == 7){
             list[object_T] = object_F * object_S;
         }
-        else if (cmd == 100){
-            printf("this version support time and add how to use cmd\n"
-                   "writer by haswell\n"
-                   "\t a worriest fake system\n"
-                   "2025/11/8 version:0.0.1(beta)\n");
+        else if (cmd == 8){
+            list[object_T] = (int) object_F / object_S;
         }
+        else if (cmd == 9){
+            list[object_T] = list[object_F] + list[object_S];
+        }
+        else if (cmd == 10){
+            list[object_T] = list[object_F] * list[object_S];
+        }
+        else if (cmd == 11){
+            list[object_T] = (int) list[object_F] / list[object_S];
+        }
+
     }
     return 0;
 }
